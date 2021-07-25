@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "name": "Jobs",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "location": {
+      "type": "string",
+      "required": true
+    },
+    "minExperience": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
+    },
+    "maxExperience": {
+      "type": "decimal",
+      "default": 0,
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "FULL_TIME",
+        "PART_TIME",
+        "CONTRACT",
+        "INTERN",
+        "CONTRACT_TO_HIRE",
+        "OTHER"
+      ],
+      "required": true,
+      "default": "FULL_TIME"
+    },
+    "vacancies": {
+      "type": "integer",
+      "required": true
+    },
+    "skills": {
+      "type": "text",
+      "required": true
+    },
+    "eligibility": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
